@@ -89,7 +89,6 @@ Output files are named using the pattern:
 Examples:
 - `document_page_1.png`
 - `document_page_5.jpeg`
-- `report_page_12.tiff`
 
 ## Examples
 
@@ -122,7 +121,6 @@ Select pages to extract: 1,5,10-15
 - **DPI Conversion**: Uses PyMuPDF's matrix scaling (`zoom = dpi / 72.0`)
 - **Memory Management**: Explicitly clears pixmaps after saving to optimize memory usage
 - **JPEG Quality**: Fixed at 95 for optimal quality
-- **TIFF Compression**: Uses LZW compression for smaller file sizes
 - **Page Numbering**: User-facing prompts use 1-based numbering (page 1 = first page)
 
 ## License
