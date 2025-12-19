@@ -2,17 +2,17 @@
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/0xSoliski/pdf-to-high-res-image/releases/tag/v1.0.0) [![License: AGPL v3](https://img.shields.io/badge/license-AGPLv3-blue.svg)](LICENSE)
 
-A command-line tool that extracts pages from PDF files as high-resolution images. Supports output formats (PNG, JPEG) and customizable DPI settings (300 or 600 DPI).
+Command-line utility for extracting PDF pages as raster images using PyMuPDF. Supports PNG/JPEG output at 300 or 600 DPI.
 
 ## Features
 
-- **High Resolution Output**: 300 DPI (standard) or 600 DPI (ultra high) resolution
-- **Multiple Formats**: Export as PNG or JPEG
-- **Flexible Page Selection**: Extract single pages, ranges, or all pages
-- **User-Friendly CLI**: Clear prompts and validation with helpful error messages
-- **Batch Processing**: Extract multiple pages in one run with progress indication
-- **Overwrite Protection**: Confirms before overwriting existing files
-- **Error Resilience**: Continues processing even if individual pages fail
+- DPI options: 300 or 600
+- Output formats: PNG (lossless), JPEG (quality=95)
+- Page selection: single pages, ranges, or all
+- Interactive CLI with input validation
+- Batch extraction with progress tracking
+- Overwrite confirmation
+- Partial failure handling
 
 ## Requirements
 
@@ -110,11 +110,11 @@ Select pages to extract: 1,5,10-15
 
 ## Error Handling
 
-- **Invalid inputs**: The program will re-prompt for valid input
-- **Missing files**: Checks for PDF file existence before processing
-- **Page errors**: Continues processing remaining pages if individual pages fail
-- **Summary report**: Displays success/failure count and error details at completion
-- **Exit confirmation**: Press Enter to exit, allowing you to read any error messages
+- Input validation with retry loops
+- File existence check before processing
+- Per-page error isolation (failures don't abort batch)
+- Summary report with success/failure counts
+- Exit prompt to prevent terminal auto-close
 
 ## Technical Details
 
@@ -130,7 +130,7 @@ Licensed under the GNU Affero General Public License v3.0. See [LICENSE](LICENSE
 ## Troubleshooting
 
 **Problem**: "PyMuPDF not found" error  
-**Solution**: Install dependencies: `pip install PyMuPDF Pillow`
+**Solution**: Install dependencies: `pip install PyMuPDF`
 
 **Problem**: Executable doesn't run  
 **Solution**: Ensure the PDF file is in the same directory as the executable
